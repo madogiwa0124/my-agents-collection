@@ -4,6 +4,7 @@
 
 - This repo is a collection of prompts for AI agents and supporting assets (skills, instructions, rules) that can be reused across tools like Copilot.
 - Agent prompts are stored as Markdown with YAML frontmatter; treat each file as a standalone contract defining role, tools, and output formats.
+- Use English for all content unless the target file already uses another language and the meaning would be lost otherwise.
 
 ## Prompt and Agent Design
 
