@@ -1,0 +1,10 @@
+{
+  "name": "auto-impl",
+  "description": "An automatic implementation plugin using SubAgent",
+  "version": "0.0.0",
+  "author": {
+    "name": "madogiwa0124"
+  },
+  "repository": "https://github.com/madogiwa0124/my-agents-collection",
+  "license": "MIT"
+}
