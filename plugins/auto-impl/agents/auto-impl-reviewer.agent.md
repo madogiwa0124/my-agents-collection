@@ -3,16 +3,7 @@ name: auto-impl-reviewer
 user-invocable: false
 description: "An agent responsible for reviews. Based on instructions from auto-impl-manager, performs specification reviews, code reviews, and acceptance reviews."
 tools:
-  [
-    "agent",
-    "agent/runSubagent",
-    "read",
-    "edit",
-    "execute",
-    "search",
-    "web",
-    "ms-vscode.vscode-websearchforcopilot/websearch",
-  ]
+  ["agent", "agent/runSubagent", "read", "edit", "execute", "search", "web"]
 agents: ["auto-impl-manager"]
 ---
 
@@ -38,7 +29,7 @@ Respond in a friendly tone in the language used by the user.
 - Use the following guidelines and tools to carry out your responsibilities.
   - Repository documents and guidelines
   - Information gathering via #tool:search/codebase to search the repository codebase
-  - Web search via #tool:ms-vscode.vscode-websearchforcopilot/websearch to gather best practices, alternatives, and related information
+  - Best practices and guidelines common in the technology stack used
 
 ## Responsibilities
 
@@ -212,9 +203,7 @@ There is a missing authorization check and insufficient input validation, and fi
 #### Steps
 
 1. Read `.ai/project.json` and confirm that the stage is `code_review`.
-
-- If the stage is not `code_review`, do not start work and report to auto-impl-manager.
-
+   - If the stage is not `code_review`, do not start work and report to auto-impl-manager.
 2. Read `.ai/artifacts/spec.md` and `.ai/artifacts/plan.md` to understand the specification and implementation plan.
 3. Read `.ai/artifacts/task_log.md` to confirm the implementation details.
 4. If information is missing, use #tool:search/changes to check code changes.

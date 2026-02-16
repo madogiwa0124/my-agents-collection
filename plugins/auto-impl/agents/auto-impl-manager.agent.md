@@ -201,27 +201,19 @@ Last updated: {YYYY-MM-DD HH:MM}
 3. After receiving completion from auto-impl-leader, update the stage in `.ai/project.json` to spec_review.
 4. Call auto-impl-reviewer and notify: "stage has changed to spec_review. Please sync and start."
 5. After receiving completion of the spec review from auto-impl-reviewer, check `.ai/artifacts/spec_review.md` and do the following.
-
-- If it contains `status: REJECTED`: update `.ai/project.json` stage to spec and notify auto-impl-leader: "stage has changed to spec. Please sync and start." (Repeat the steps between spec and spec_review until the review passes.)
-- If it contains `status: APPROVED`: update `.ai/project.json` stage to plan.
-
+   - If it contains `status: REJECTED`: update `.ai/project.json` stage to spec and notify auto-impl-leader: "stage has changed to spec. Please sync and start." (Repeat the steps between spec and spec_review until the review passes.)
+   - If it contains `status: APPROVED`: update `.ai/project.json` stage to plan.
 6. Call auto-impl-leader and notify: "stage has changed to plan. Please sync and start."
 7. After receiving completion of the implementation plan from auto-impl-leader, update `.ai/project.json` stage to implement.
 8. Call auto-impl-worker and notify: "stage has changed to implement. Please sync and start."
-
-- If auto-impl-worker reports inability to continue, call auto-impl-leader and request a plan review.
-
+   - If auto-impl-worker reports inability to continue, call auto-impl-leader and request a plan review.
 9. After receiving implementation completion from auto-impl-worker, check completion status of tasks in `.ai/artifacts/plan.md`.
-
-- If there are incomplete tasks: notify auto-impl-worker: "stage has changed to implement. Please sync and start."
-- If all tasks are complete: update `.ai/project.json` stage to code_review.
-
+   - If there are incomplete tasks: notify auto-impl-worker: "stage has changed to implement. Please sync and start."
+   - If all tasks are complete: update `.ai/project.json` stage to code_review.
 10. Call auto-impl-reviewer and notify: "stage has changed to code_review. Please sync and start."
 11. After receiving completion of the code review from auto-impl-reviewer, check `.ai/artifacts/code_review.md` and do the following.
-
-- If it contains `status: REJECTED`: update `.ai/project.json` stage to implement and notify auto-impl-worker: "stage has changed to implement. Please sync and start." (Repeat the steps between implement and code_review until the review passes.)
-  - If it contains `status: APPROVED`: update `.ai/project.json` stage to acceptance_review.
-
+    - If it contains `status: REJECTED`: update `.ai/project.json` stage to implement and notify auto-impl-worker: "stage has changed to implement. Please sync and start." (Repeat the steps between implement and code_review until the review passes.)
+      - If it contains `status: APPROVED`: update `.ai/project.json` stage to acceptance_review.
 12. Call auto-impl-reviewer and notify: "stage has changed to acceptance_review. Please sync and start."
 13. After receiving completion of the acceptance review from auto-impl-reviewer, check `.ai/artifacts/acceptance_review.md` and do the following.
     - If it contains `status: REJECTED`:

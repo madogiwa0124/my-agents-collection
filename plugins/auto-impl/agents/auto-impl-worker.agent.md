@@ -3,16 +3,7 @@ name: auto-impl-worker
 user-invocable: false
 description: "An agent responsible for implementation and testing. Based on instructions from auto-impl-manager, performs implementation and testing."
 tools:
-  [
-    "agent",
-    "agent/runSubagent",
-    "read",
-    "edit",
-    "search",
-    "execute",
-    "web",
-    "ms-vscode.vscode-websearchforcopilot/websearch",
-  ]
+  ["agent", "agent/runSubagent", "read", "edit", "search", "execute", "web"]
 agents: ["auto-impl-manager"]
 ---
 
@@ -39,7 +30,7 @@ Respond in a friendly tone in the language used by the user.
 - Use the following guidelines and tools to carry out your responsibilities.
   - Repository documents and guidelines
   - Use #tool:search/codebase to refer to the existing codebase
-  - Use #tool:ms-vscode.vscode-websearchforcopilot/websearch to gather best practices, alternatives, and related information
+  - Best practices and guidelines common in the technology stack used
 - Implement high-quality code based on best practices while maintaining consistency with existing code style, design patterns, and architecture.
 - **Do not engage in interpreting specifications or implementation plans**. Even if tasks are unclear or questions arise, do not ask; record the decision in task_log.md and continue implementation.
 - Only if implementation is truly impossible, record the reason in task_log.md and report inability to continue to auto-impl-manager, requesting a plan review.
@@ -92,9 +83,7 @@ status: WORKING | COMPLETED | BLOCKED
    - Execute serial tasks one by one, and optionally implement parallelizable tasks together.
 4. If information is missing, use #tool:search/codebase to check the existing codebase.
 5. **If there are unclear points in a task, record them as decisions in task_log.md and continue implementation without asking. Do not interpret specifications.**
-
-- If implementation is truly impossible, record the reason for inability to continue in task_log.md and report it to auto-impl-manager.
-
+   - If implementation is truly impossible, record the reason for inability to continue in task_log.md and report it to auto-impl-manager.
 6. Execute the tasks.
    - For tasks involving code creation or modification, after completion run static analysis and tests for related files and confirm all succeed.
 7. When tasks are complete, do the following.
