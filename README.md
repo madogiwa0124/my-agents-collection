@@ -24,7 +24,18 @@ $ copilot plugin install {{plugin_name}}@my-agents-collection
 
 | Plugin                                     | Description                   |
 | ------------------------------------------ | ----------------------------- |
-| [Auto Implementation](./plugins/auto-impl) | A set of agents for automatic |
+| [Auto Implementation](./plugins/auto-impl) | A set of agents for automatic implementation using SubAgent. |
+| [Prompting Best Practices](./plugins/prompting) | A plugin that provides best practices and guidelines for creating effective prompts for agents. |
+| [My Tech Blog](./plugins/my-techblog) | A plugin that provides a custom agent for writing my technical blog posts. |
+
+### Skills
+
+| Skill                                      | Description                   |
+| ------------------------------------------ | ----------------------------- |
+| [Commit Message](./skills/commit-message)  | Generates clear Git commit messages using Conventional Commits. Use when crafting a subject line and body for a change. |
+| [Current Time](./skills/current-time)          | Get the current date and time. Use when a log timestamp or time check is needed. |
+| [Skill Creation Best Practices](./skills/skill-creation-best-practice) | Provides guidelines and best practices for creating and improving new skills for agents. |
+| [Prompting Best Practices](./skills/prompting-best-practice) | Supports the creation and improvement of prompts for various use cases. |
 
 ## Resources
 
