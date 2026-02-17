@@ -1,1 +1,1 @@
-./skills/prompting-best-practice/SKILL.md
+../../../../skills/prompting-best-practice/SKILL.md

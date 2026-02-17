@@ -1,1 +1,1 @@
-skills/skill-creation-best-practice/SKILL.md
+../../../../skills/skill-creation-best-practice/SKILL.md
