@@ -15,6 +15,12 @@
       "source": "./plugins/auto-impl",
       "description": "An automatic implementation plugin using SubAgent",
       "version": "0.0.1"
+    },
+    {
+      "name": "prompting",
+      "source": "./plugins/prompting",
+      "description": "A plugin that provides best practices and guidelines for creating effective prompts for agents.",
+      "version": "0.0.1"
     }
   ]
 }
