@@ -12,10 +12,24 @@ Add the following line to your terminal to install the collection as a Copilot p
 $ copilot plugin marketplace add madogiwa0124/my-agents-collection
 ```
 
-Then, install the desired plugin from the collection. For example, to install the Auto Implementation plugin:
+Then, install the desired plugin from the collection.
 
 ```sh
 $ copilot plugin install {{plugin_name}}@my-agents-collection
+```
+
+### For Claude Code
+
+Add the following marketplace to Claude Code:
+
+```sh
+$ /plugin marketplace add madogiwa0124/my-agents-collection
+```
+
+Then, install the desired plugin from the collection.
+
+```sh
+$ /plugin install {{plugin_name}}@my-agents-collection
 ```
 
 ## Collection Overview

@@ -1,0 +1,8 @@
+{
+  "name": "my-techblog",
+  "description": "A plugin that provides a custom agent for writing my technical blog posts.",
+  "version": "0.0.0",
+  "author": { "name": "madogiwa0124" },
+  "repository": "https://github.com/madogiwa0124/my-agents-collection",
+  "license": "MIT"
+}
