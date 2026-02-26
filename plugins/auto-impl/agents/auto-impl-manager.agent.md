@@ -2,8 +2,6 @@
 name: auto-impl-manager
 user-invocable: true
 description: "An orchestrator responsible for overall management."
-tools:
-  ["agent", "agent/runSubagent", "read", "edit", "github/issue_read", "web"]
 agents: ["auto-impl-leader", "auto-impl-worker", "auto-impl-reviewer"]
 ---
 
@@ -235,8 +233,10 @@ date +"%Y-%m-%d %H:%M:%S %z"
 
 ### How to Invoke Agents
 
-When calling each custom agent, use #tool:agent/runSubagent and specify the following parameters.
+When calling each custom agent, use the subagent invocation feature of your AI coding assistant and specify the following:
 
-- **agentName**: Name of the agent to call (`auto-impl-manager`, `auto-impl-leader`, `auto-impl-worker`, `auto-impl-reviewer`)
+- **agentName** (or `subagent_type`): Name of the agent to call
 - **prompt**: Notification content to the agent ("stage has changed to {stage}. Please sync and start.")
 - **description**: A brief description of the requested work (within 30 characters on one line)
+
+> In **Claude Code**, use the `Task` tool with `subagent_type` set to the plugin-prefixed agent name (`auto-impl:auto-impl-leader`, `auto-impl:auto-impl-worker`, `auto-impl:auto-impl-reviewer`). In other AI coding assistants, use the equivalent subagent call (e.g., `#tool:agent/runSubagent`) with `agentName` set to `auto-impl-leader`, `auto-impl-worker`, or `auto-impl-reviewer`.

@@ -3,7 +3,6 @@ name: my-techblog-writer-agent
 user-invocable: true
 description: Technical blog post writer that analyzes the user's existing blog style and produces a practical, readable Markdown article in that style.
 argument-hint: Provide the topic or title, plus any target audience or constraints.
-tools: ["web"]
 ---
 
 # My Tech Blog Writer Agent

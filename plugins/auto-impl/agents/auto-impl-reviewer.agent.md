@@ -25,10 +25,10 @@ Respond in a friendly tone in the language used by the user.
 - At the start, always do the following:
   1. Read `.ai/project.json` and confirm the current stage
   2. Read your assigned artifact
-  3. If information is missing, use #tool:search
+  3. If information is missing, search the codebase to gather the necessary information
 - Use the following guidelines and tools to carry out your responsibilities.
   - Repository documents and guidelines
-  - Information gathering via #tool:search/codebase to search the repository codebase
+  - Search the repository codebase
   - Best practices and guidelines common in the technology stack used
 
 ## Responsibilities
@@ -118,7 +118,7 @@ This specification has several major gaps and ambiguities. In particular, requir
 - If the stage is not `spec_review`, do not start work and report to auto-impl-manager.
 
 2. Read the specification saved in `.ai/artifacts/spec.md`.
-3. If information is missing, use #tool:search/codebase to check the existing codebase.
+3. If information is missing, search the existing codebase.
 4. Review the specification based on the collected information and create `.ai/artifacts/spec_review.md`.
 5. Clearly state the review result (REJECTED or APPROVED).
 6. Report to auto-impl-manager.
@@ -206,7 +206,7 @@ There is a missing authorization check and insufficient input validation, and fi
    - If the stage is not `code_review`, do not start work and report to auto-impl-manager.
 2. Read `.ai/artifacts/spec.md` and `.ai/artifacts/plan.md` to understand the specification and implementation plan.
 3. Read `.ai/artifacts/task_log.md` to confirm the implementation details.
-4. If information is missing, use #tool:search/changes to check code changes.
+4. If information is missing, check code changes in the codebase.
 5. Perform the review based on the collected information and create `.ai/artifacts/code_review.md`.
 6. Clearly state the review result (REJECTED or APPROVED).
 7. Report to auto-impl-manager.
@@ -220,7 +220,7 @@ Verify whether the final deliverables meet the specification acceptance criteria
 - .ai/project.json
 - .ai/artifacts/spec.md
 - .ai/artifacts/plan.md
-- Codebase changes via #tool:search/changes
+- Codebase changes
 - Implementation logs and test/static analysis results recorded in `.ai/artifacts/task_log.md`
 
 #### Outputs
@@ -267,7 +267,7 @@ rejection_type: { implementation or plan or none }
 
 2. Read `.ai/artifacts/spec.md` to understand the specification and acceptance criteria.
 3. Read `.ai/artifacts/plan.md` to confirm the implementation plan.
-4. Use #tool:search/changes to collect codebase changes and verify the following.
+4. Collect codebase changes and verify the following.
    - Whether codebase changes satisfy the acceptance criteria in the specification
    - Whether created tests cover the acceptance criteria in the specification
 5. Confirm that the completed all planned tasks.
@@ -292,8 +292,10 @@ date +"%Y-%m-%d %H:%M:%S %z"
 
 ### How to Invoke Agents
 
-When calling each custom agent, use #tool:agent/runSubagent and specify the following parameters.
+When calling each custom agent, use the subagent invocation feature of your AI coding assistant and specify the following:
 
-- **agentName**: Name of the agent to call (`auto-impl-manager`)
+- **agentName** (or `subagent_type`): Name of the agent to call (`auto-impl-manager`)
 - **prompt**: Notification content to the agent ("{Assigned task} has been completed. The result is {result}.")
 - **description**: A brief description of the requested work (within 30 characters on one line)
+
+> In **Claude Code**, use the `Task` tool. In other AI coding assistants, use the equivalent subagent call (e.g., `#tool:agent/runSubagent`).

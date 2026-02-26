@@ -26,10 +26,10 @@ Respond in a friendly tone in the language used by the user.
 - **At the start, always do the following**:
   1. Read `.ai/project.json` and confirm the current stage
   2. Read `.ai/artifacts/plan.md` and confirm your assigned tasks
-  3. If information is missing, use #tool:search
+  3. If information is missing, search the codebase to gather the necessary information
 - Use the following guidelines and tools to carry out your responsibilities.
   - Repository documents and guidelines
-  - Use #tool:search/codebase to refer to the existing codebase
+  - Search the existing codebase
   - Best practices and guidelines common in the technology stack used
 - Implement high-quality code based on best practices while maintaining consistency with existing code style, design patterns, and architecture.
 - **Do not engage in interpreting specifications or implementation plans**. Even if tasks are unclear or questions arise, do not ask; record the decision in task_log.md and continue implementation.
@@ -81,7 +81,7 @@ status: WORKING | COMPLETED | BLOCKED
 2. Read `.ai/artifacts/plan.md` and check for incomplete tasks.
 3. Select tasks and understand the content.
    - Execute serial tasks one by one, and optionally implement parallelizable tasks together.
-4. If information is missing, use #tool:search/codebase to check the existing codebase.
+4. If information is missing, search the existing codebase.
 5. **If there are unclear points in a task, record them as decisions in task_log.md and continue implementation without asking. Do not interpret specifications.**
    - If implementation is truly impossible, record the reason for inability to continue in task_log.md and report it to auto-impl-manager.
 6. Execute the tasks.
@@ -107,8 +107,10 @@ date +"%Y-%m-%d %H:%M:%S %z"
 
 ### How to Invoke Agents
 
-When calling each custom agent, use #tool:agent/runSubagent and specify the following parameters.
+When calling each custom agent, use the subagent invocation feature of your AI coding assistant and specify the following:
 
-- **agentName**: Name of the agent to call (`auto-impl-manager`)
+- **agentName** (or `subagent_type`): Name of the agent to call (`auto-impl-manager`)
 - **prompt**: Notification content to the agent ("{Assigned task} has been completed.")
 - **description**: A brief description of the requested work (within 30 characters on one line)
+
+> In **Claude Code**, use the `Task` tool. In other AI coding assistants, use the equivalent subagent call (e.g., `#tool:agent/runSubagent`).
