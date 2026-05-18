@@ -50,7 +50,7 @@ $ /plugin install {{plugin_name}}@my-agents-collection
 | [Current Time](./skills/current-time)          | Get the current date and time. Use when a log timestamp or time check is needed. |
 | [Skill Creation Best Practices](./skills/skill-creation-best-practice) | Provides guidelines and best practices for creating and improving new skills for agents. |
 | [Prompting Best Practices](./skills/prompting-best-practice) | Supports the creation and improvement of prompts for various use cases. |
-| [Copilot Review](./skills/copilot-review) | Sends current git changes to GitHub Copilot CLI for code review and displays the results. |
+| [Copilot Review](./plugins/copilot-review) | Sends current git changes to GitHub Copilot CLI for code review and displays the results. |
 
 ## Resources
 
