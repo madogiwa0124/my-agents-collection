@@ -27,6 +27,12 @@
       "source": "./plugins/my-techblog",
       "description": "A plugin that provides a custom agent for writing my technical blog posts.",
       "version": "0.0.1"
+    },
+    {
+      "name": "copilot-review",
+      "source": "./plugins/copilot-review",
+      "description": "Sends current git changes to GitHub Copilot CLI for code review and displays the results.",
+      "version": "0.0.1"
     }
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "copilot-review",
+  "description": "Sends current git changes to GitHub Copilot CLI for code review and displays the results.",
+  "version": "0.0.0",
+  "author": {
+    "name": "madogiwa0124"
+  },
+  "repository": "https://github.com/madogiwa0124/my-agents-collection",
+  "license": "MIT"
+}
